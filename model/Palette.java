@@ -47,13 +47,13 @@ public class Palette {
 
     }
 
-    public Color getColor(){
+    public Color getColor() {
         return color;
     }
 
     public Color generateAndReturnColor() {
         color = new Color(red, green, blue, 1);
-        return getColor();
+        return color;
     }
 
     public Color blend(Color color1, Color color2, float blendingRation) {
@@ -66,18 +66,15 @@ public class Palette {
         double g = (color1.getGreen() * color2BlendingRatio) + (color2.getGreen() * blendingRation);
         double b = (color1.getBlue() * color2BlendingRatio) + (color2.getBlue() * blendingRation);
 
-        Color color = new Color(r, g, b, 1.0f);
+        color = new Color(r, g, b, 1.0f);
         return color;
     }
 
-    public boolean compareColors(Color targetColor){
-        double targetRed = targetColor.getRed();;
+    public boolean compareColors(Color targetColor) {
+        double targetRed = targetColor.getRed();
         double targetGreen = targetColor.getGreen();
         double targetBlue = targetColor.getBlue();
 
-        if (Math.abs(targetRed - red) <= 0.1 && Math.abs(targetGreen - green) <= 0.1 && Math.abs(targetBlue - blue) <= 0.1)
-            return true;
-        else
-            return false;
+        return Math.abs(targetRed - red) <= 0.1 && Math.abs(targetGreen - green) <= 0.1 && Math.abs(targetBlue - blue) <= 0.1;
     }
 }

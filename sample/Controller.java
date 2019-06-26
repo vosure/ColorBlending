@@ -20,22 +20,22 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     public Canvas canvas;
-    public Circle circle;
 
+    public Circle circle;
     public Rectangle rect;
+
     public Label counter;
+
     public ColorPicker colorPicker2;
     public ColorPicker colorPicker1;
+
     public Slider blueSlider;
     public Slider greenSlider;
     public Slider redSlider;
 
     private int count = 0;
-
     private Random randomizer = new Random();
-
     private Palette palette;
-
     private Color targetColor;
 
     @Override
@@ -77,7 +77,7 @@ public class Controller implements Initializable {
         counter.setText("Успешно :" + ++count + " раз");
     }
 
-    public void changeTargetColor(ActionEvent actionEvent) {
+    public void changeTargetColor() {
         generateTargetColor();
     }
 
